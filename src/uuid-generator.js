@@ -159,13 +159,20 @@ function generateSingleUUID() {
           // Try to validate namespace as UUID, if fails use DNS namespace
           try {
             uuid = uuidv3(namespace, name);
-          } catch {
-            // If namespace is not a valid UUID, use DNS namespace with the namespace value as name
-            uuid = uuidv3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', namespace);
+          } catch (error) {
+            // If namespace is invalid, use DNS namespace with both namespace and name as fallback
+            const fallbackName = name || namespace || 'default';
+            uuid = uuidv3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', fallbackName);
           }
         } else {
-          // Default namespace and name for demo - use DNS namespace
-          uuid = uuidv3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'default');
+          // Use DNS namespace with safe fallback name
+          const safeName = namespace || name || 'default';
+          try {
+            uuid = uuidv3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', safeName);
+          } catch (error) {
+            // Ultimate fallback: use DNS namespace with 'default'
+            uuid = uuidv3('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'default');
+          }
         }
         break;
       case 'v4':
@@ -176,13 +183,20 @@ function generateSingleUUID() {
           // Try to validate namespace as UUID, if fails use DNS namespace
           try {
             uuid = uuidv5(namespace, name);
-          } catch {
-            // If namespace is not a valid UUID, use DNS namespace with the namespace value as name
-            uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', namespace);
+          } catch (error) {
+            // If namespace is invalid, use DNS namespace with both namespace and name as fallback
+            const fallbackName = name || namespace || 'default';
+            uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', fallbackName);
           }
         } else {
-          // Default namespace and name for demo - use DNS namespace
-          uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'default');
+          // Use DNS namespace with safe fallback name
+          const safeName = namespace || name || 'default';
+          try {
+            uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', safeName);
+          } catch (error) {
+            // Ultimate fallback: use DNS namespace with 'default'
+            uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'default');
+          }
         }
         break;
       case 'v6':
@@ -247,11 +261,20 @@ function generateBatchUUIDs() {
           if (namespace && name) {
             try {
               uuid = uuidv5(namespace, name);
-            } catch {
-              uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', namespace);
+            } catch (error) {
+              // If namespace is invalid, use DNS namespace with both namespace and name as fallback
+              const fallbackName = name || namespace || 'default';
+              uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', fallbackName);
             }
           } else {
-            uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', `batch-${i}`);
+            // Use DNS namespace with safe fallback name
+            const safeName = namespace || name || `batch-${i}`;
+            try {
+              uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', safeName);
+            } catch (error) {
+              // Ultimate fallback: generate a simple namespace-based UUID
+              uuid = uuidv5('6ba7b810-9dad-11d1-80b4-00c04fd430c8', `batch-${i}`);
+            }
           }
           break;
         case 'v6':
