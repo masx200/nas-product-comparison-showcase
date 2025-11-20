@@ -11,7 +11,7 @@ export const products: ProductData[] = [
         name: "铁威马 F8 SSD Plus",
         tagline: "掌中性能小怪兽 · 8盘位全闪NAS",
         price: "约4600元",
-        image: "https://sfile.chatglm.cn/images-ppt/2d6d8e00bc3a.jpg",
+        image: "/images/nas-products/terramaster-f8-ssd-plus.jpg",
         colorTheme: "blue",
         featureTitle: "超静音设计",
         specs: [
@@ -33,7 +33,7 @@ export const products: ProductData[] = [
         name: "极空间 Z4Pro+ 8G版",
         tagline: "Z4Pro+焕\"芯\"一代 · 智能数据管家",
         price: "约2699元",
-        image: "https://sfile.chatglm.cn/images-ppt/75213fe45ab8.png",
+        image: "/images/nas-products/zspace-z4pro.png",
         colorTheme: "purple",
         featureTitle: "丰富接口配置",
         specs: [
@@ -55,7 +55,7 @@ export const products: ProductData[] = [
         name: "绿联 DXP4800 Plus",
         tagline: "全能高效 · 更懂你的私有云",
         price: "约2500-2999元",
-        image: "https://sfile.chatglm.cn/images-ppt/d6af1550b961.png",
+        image: "/images/nas-products/ugreen-dxp4800.png",
         colorTheme: "green",
         featureTitle: "灵活存储方案",
         specs: [
@@ -77,7 +77,7 @@ export const products: ProductData[] = [
         name: "飞牛零刻 ME mini",
         tagline: "6盘位全闪NAS · 迷你高效存储",
         price: "约1295元",
-        image: "https://sfile.chatglm.cn/images-ppt/7badb581cd7b.png",
+        image: "/images/nas-products/fnbeelink-me-mini.png",
         colorTheme: "red",
         featureTitle: "飞牛fnOS系统特色",
         specs: [
