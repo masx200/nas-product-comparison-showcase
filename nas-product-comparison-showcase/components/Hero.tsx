@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       {/* Abstract Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 opacity-90"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558494949-efc5270f9c63?q=80&w=2668&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
+        <div className="absolute inset-0  bg-cover bg-center mix-blend-overlay opacity-20"></div>
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-brand-dark to-transparent"></div>
       </div>
 
