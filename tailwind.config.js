@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["*.html", "./**/*.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["*.html", "./**/*.html",
+    
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./全闪NAS巅峰对决网站功能演示/**/*.{js,ts,jsx,tsx}",
+    "./nas-product-comparison-showcase/**/*.{js,ts,jsx,tsx}",
+    "./UUID在线生成器/**/*.{js,ts,jsx,tsx}",
+  
+  
+  ],
   theme: {
     extend: {
       colors: {
