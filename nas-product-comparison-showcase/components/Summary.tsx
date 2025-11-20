@@ -37,10 +37,10 @@ const Summary: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="mt-20 p-8 bg-gradient-to-r from-brand-dark to-brand-primary rounded-2xl text-center text-white shadow-2xl">
-                    <h3 className="text-2xl font-bold mb-4">想要了解更多细节？</h3>
-                    <p className="mb-8 text-blue-100">关注我们的后续深度评测文章</p>
-                    <button className="px-8 py-3 bg-white text-brand-primary font-bold rounded-full hover:bg-blue-50 transition-colors shadow-lg">
+                <div className="mt-20 p-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl text-center text-white shadow-2xl">
+                    <h3 className="text-2xl font-bold mb-4 text-yellow-300">想要了解更多细节？</h3>
+                    <p className="mb-8 text-yellow-100">关注我们的后续深度评测文章</p>
+                    <button className="px-8 py-3 bg-yellow-400 text-purple-800 font-bold rounded-full hover:bg-yellow-300 transition-colors shadow-lg">
                         订阅更新
                     </button>
                 </div>
