@@ -1,4 +1,8 @@
 {
+  "include": [
+    "src/**/*",
+    "**/*.tsx",
+  ],
   "compilerOptions": {
     "strict": true,
     "target": "ES2022",
@@ -12,7 +16,9 @@
     ],
     "skipLibCheck": true,
     "types": [
-      "node"
+      "node",
+      "react",
+      "react-dom"
     ],
     "moduleResolution": "bundler",
     "isolatedModules": true,
