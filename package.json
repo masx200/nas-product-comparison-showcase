@@ -1,5 +1,5 @@
 {
-  "name": "@masx200/uuid-online-generator",
+  "name": "@masx200/nas-product-comparison-showcase",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
     "@tailwindcss/vite": "^4.1.16",
     "@types/prismjs": "^1.26.5",
     "@types/uuid": "^11.0.0",
@@ -19,6 +22,9 @@
     "vite-plugin-pwa": "^1.1.0"
   },
   "dependencies": {
+    "lucide-react": "^0.554.0",
+    "react-dom": "^19.2.0",
+    "react": "^19.2.0",
     "@masx200/vite-plugin-virtual-http-resolve": "^1.0.1",
     "@tailwindcss/postcss": "^4.1.16",
     "@types/node": "^24.9.2",
@@ -35,7 +41,7 @@
   "main": "postcss.config.js",
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/masx200/json-processing-libraries-comparison"
+    "url": "https://gitlab.com/masx200/nas-product-comparison-showcase"
   },
   "keywords": [],
   "author": "",

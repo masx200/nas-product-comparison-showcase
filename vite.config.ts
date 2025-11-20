@@ -1,14 +1,15 @@
+import react from '@vitejs/plugin-react';
+import path from 'path';
 import { defineConfig } from "vite";
 import { prismjsPlugin } from "vite-plugin-prismjs";
 import { VitePWA } from "vite-plugin-pwa";
 //@ts-ignore
+import remoteToLocal, { FileCache } from "@masx200/vite-plugin-virtual-http-resolve";
 import tailwindcss from "@tailwindcss/vite"; // 引入 Vite 插件
-import { FileCache } from "@masx200/vite-plugin-virtual-http-resolve";
-import remoteToLocal from "@masx200/vite-plugin-virtual-http-resolve";
-import { fetch } from "undici";
-import { resolve } from "path";
 import { readdirSync, statSync } from "fs";
+import { resolve } from "path";
 import htmlMinifier from "rollup-plugin-html-minifier";
+import { fetch } from "undici";
 // 动态获取当前目录下所有HTML文件
 function getHtmlFiles() {
   const currentDir = __dirname;
@@ -31,7 +32,7 @@ function getHtmlFiles() {
 }
 
 export default defineConfig({
-  plugins: [
+  plugins: [react(),
     VitePWA({
       registerType: "autoUpdate", // 可选 prompt / autoUpdate
       injectRegister: "auto", // 自动注入注册脚本
@@ -147,6 +148,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
+      "@": path.resolve(__dirname, "."),
       "chart.js/auto": "virtual:https://esm.sh/chart.js/auto/auto.js",
     },
   },
