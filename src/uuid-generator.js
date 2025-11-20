@@ -13,23 +13,30 @@
 
 "use strict";
 
-import { v1 as uuidv1, v3 as uuidv3, v4 as uuidv4, v5 as uuidv5, v6 as uuidv6, v7 as uuidv7 } from 'uuid';
+import {
+  v1 as uuidv1,
+  v3 as uuidv3,
+  v4 as uuidv4,
+  v5 as uuidv5,
+  v6 as uuidv6,
+  v7 as uuidv7,
+} from "uuid";
 
 // ============================================================================
 // DOM Element References
 // ============================================================================
 
 /** @type {HTMLInputElement|null} Single UUID input field */
-const singleUuidInput = document.getElementById('singleUuid');
+const singleUuidInput = document.getElementById("singleUuid");
 
 /** @type {HTMLSelectElement} UUID version select */
-const uuidVersionSelect = document.getElementById('uuidVersion');
+const uuidVersionSelect = document.getElementById("uuidVersion");
 
 /** @type {HTMLInputElement} Batch count input field */
-const batchCountInput = document.getElementById('batchCount');
+const batchCountInput = document.getElementById("batchCount");
 
 /** @type {HTMLSelectElement} Result format select */
-const resultFormatSelect = document.getElementById('resultFormat');
+const resultFormatSelect = document.getElementById("resultFormat");
 
 /** @type {HTMLInputElement} UUID case radio buttons */
 const uuidCaseRadios = document.querySelectorAll('input[name="case"]');
@@ -38,37 +45,37 @@ const uuidCaseRadios = document.querySelectorAll('input[name="case"]');
 const lineRadios = document.querySelectorAll('input[name="line"]');
 
 /** @type {HTMLInputElement} Namespace input field */
-const uuidNamespaceInput = document.getElementById('uuidNamespace');
+const uuidNamespaceInput = document.getElementById("uuidNamespace");
 
 /** @type {HTMLInputElement} Name input field */
-const uuidNameInput = document.getElementById('uuidName');
+const uuidNameInput = document.getElementById("uuidName");
 
 /** @type {HTMLElement} Generate content result area */
-const generateContentArea = document.getElementById('generateContent');
+const generateContentArea = document.getElementById("generateContent");
 
 /** @type {HTMLButtonElement} Single refresh button */
-const singleRefreshBtn = document.getElementById('singleRefresh');
+const singleRefreshBtn = document.getElementById("singleRefresh");
 
 /** @type {HTMLButtonElement} Single copy button */
-const singleUuidCopyBtn = document.getElementById('singleUuidCopy');
+const singleUuidCopyBtn = document.getElementById("singleUuidCopy");
 
 /** @type {HTMLButtonElement} Batch generate button */
-const startBatchBtn = document.getElementById('startBatch');
+const startBatchBtn = document.getElementById("startBatch");
 
 /** @type {HTMLButtonElement} Copy batch button */
-const startCopyBtn = document.getElementById('startCopy');
+const startCopyBtn = document.getElementById("startCopy");
 
 /** @type {HTMLButtonElement} Download button */
-const startDownloadBtn = document.getElementById('startDownload');
+const startDownloadBtn = document.getElementById("startDownload");
 
 /** @type {HTMLButtonElement} Clear button */
-const startClearBtn = document.getElementById('startClear');
+const startClearBtn = document.getElementById("startClear");
 
 // ============================================================================
 // State Management
 // ============================================================================
 
-let currentUUID = '';
+let currentUUID = "";
 
 // ============================================================================
 // Initialization
@@ -77,7 +84,7 @@ let currentUUID = '';
 /**
  * Initialize the UUID generator when DOM is loaded
  */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   initializeUUIDGenerator();
 });
 
@@ -101,37 +108,37 @@ function initializeUUIDGenerator() {
  */
 function setupEventListeners() {
   // Single UUID refresh button
-  singleRefreshBtn.addEventListener('click', generateSingleUUID);
+  singleRefreshBtn.addEventListener("click", generateSingleUUID);
 
   // Single UUID copy button
-  singleUuidCopyBtn.addEventListener('click', copySingleUUID);
+  singleUuidCopyBtn.addEventListener("click", copySingleUUID);
 
   // UUID version change
-  uuidVersionSelect.addEventListener('change', handleVersionChange);
+  uuidVersionSelect.addEventListener("change", handleVersionChange);
 
   // Batch generate button
-  startBatchBtn.addEventListener('click', generateBatchUUIDs);
+  startBatchBtn.addEventListener("click", generateBatchUUIDs);
 
   // Copy batch button
-  startCopyBtn.addEventListener('click', copyBatchUUIDs);
+  startCopyBtn.addEventListener("click", copyBatchUUIDs);
 
   // Download button
-  startDownloadBtn.addEventListener('click', downloadUUIDs);
+  startDownloadBtn.addEventListener("click", downloadUUIDs);
 
   // Clear button
-  startClearBtn.addEventListener('click', clearResults);
+  startClearBtn.addEventListener("click", clearResults);
 
   // Format change
-  resultFormatSelect.addEventListener('change', formatChangeHandler);
+  resultFormatSelect.addEventListener("change", formatChangeHandler);
 
   // Case change
-  uuidCaseRadios.forEach(radio => {
-    radio.addEventListener('change', updateSingleUUIDDisplay);
+  uuidCaseRadios.forEach((radio) => {
+    radio.addEventListener("change", updateSingleUUIDDisplay);
   });
 
   // Line handling change
-  lineRadios.forEach(radio => {
-    radio.addEventListener('change', updateSingleUUIDDisplay);
+  lineRadios.forEach((radio) => {
+    radio.addEventListener("change", updateSingleUUIDDisplay);
   });
 }
 
@@ -151,58 +158,58 @@ function generateSingleUUID() {
     let uuid;
 
     switch (version) {
-      case 'v1':
+      case "v1":
         uuid = uuidv1();
         break;
-      case 'v3':
+      case "v3":
         if (namespace && name) {
           // Validate namespace as UUID, use correct parameter order: v3(name, namespace)
           try {
             uuid = uuidv3(name, namespace);
           } catch (error) {
             // If namespace is invalid, use DNS namespace with fallback
-            const fallbackName = name || 'default';
-            uuid = uuidv3(fallbackName, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+            const fallbackName = name || "default";
+            uuid = uuidv3(fallbackName, "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
           }
         } else {
           // Use DNS namespace with safe fallback name
-          const safeName = name || namespace || 'default';
+          const safeName = name || namespace || "default";
           try {
-            uuid = uuidv3(safeName, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+            uuid = uuidv3(safeName, "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
           } catch (error) {
             // Ultimate fallback: use DNS namespace with 'default'
-            uuid = uuidv3('default', '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+            uuid = uuidv3("default", "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
           }
         }
         break;
-      case 'v4':
+      case "v4":
         uuid = uuidv4();
         break;
-      case 'v5':
+      case "v5":
         if (namespace && name) {
           // Validate namespace as UUID, use correct parameter order: v5(name, namespace)
           try {
             uuid = uuidv5(name, namespace);
           } catch (error) {
             // If namespace is invalid, use DNS namespace with fallback
-            const fallbackName = name || 'default';
-            uuid = uuidv5(fallbackName, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+            const fallbackName = name || "default";
+            uuid = uuidv5(fallbackName, "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
           }
         } else {
           // Use DNS namespace with safe fallback name
-          const safeName = name || namespace || 'default';
+          const safeName = name || namespace || "default";
           try {
-            uuid = uuidv5(safeName, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+            uuid = uuidv5(safeName, "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
           } catch (error) {
             // Ultimate fallback: use DNS namespace with 'default'
-            uuid = uuidv5('default', '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+            uuid = uuidv5("default", "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
           }
         }
         break;
-      case 'v6':
+      case "v6":
         uuid = uuidv6();
         break;
-      case 'v7':
+      case "v7":
         uuid = uuidv7();
         break;
       default:
@@ -211,10 +218,9 @@ function generateSingleUUID() {
 
     currentUUID = uuid;
     updateSingleUUIDDisplay();
-
   } catch (error) {
-    console.error('UUID generation error:', error);
-    showError('生成UUID时出错: ' + error.message);
+    console.error("UUID generation error:", error);
+    showError("生成UUID时出错: " + error.message);
   }
 }
 
@@ -229,7 +235,7 @@ function generateBatchUUIDs() {
 
   // Validate count
   if (isNaN(count) || count < 1 || count > 1000000) {
-    showError('生成数量必须在1到1000000之间');
+    showError("生成数量必须在1到1000000之间");
     return;
   }
 
@@ -240,56 +246,68 @@ function generateBatchUUIDs() {
       let uuid;
 
       switch (version) {
-        case 'v1':
+        case "v1":
           uuid = uuidv1();
           break;
-        case 'v3':
+        case "v3":
           if (namespace && name) {
             try {
               uuid = uuidv3(name, namespace);
             } catch (error) {
               // If namespace is invalid, use DNS namespace with fallback
               const fallbackName = name || `batch-${i}`;
-              uuid = uuidv3(fallbackName, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+              uuid = uuidv3(
+                fallbackName,
+                "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+              );
             }
           } else {
             // Use DNS namespace with safe fallback name
             const safeName = name || namespace || `batch-${i}`;
             try {
-              uuid = uuidv3(safeName, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+              uuid = uuidv3(safeName, "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
             } catch (error) {
               // Ultimate fallback: generate a simple namespace-based UUID
-              uuid = uuidv3(`batch-${i}`, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+              uuid = uuidv3(
+                `batch-${i}`,
+                "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+              );
             }
           }
           break;
-        case 'v4':
+        case "v4":
           uuid = uuidv4();
           break;
-        case 'v5':
+        case "v5":
           if (namespace && name) {
             try {
               uuid = uuidv5(name, namespace);
             } catch (error) {
               // If namespace is invalid, use DNS namespace with fallback
               const fallbackName = name || `batch-${i}`;
-              uuid = uuidv5(fallbackName, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+              uuid = uuidv5(
+                fallbackName,
+                "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+              );
             }
           } else {
             // Use DNS namespace with safe fallback name
             const safeName = name || namespace || `batch-${i}`;
             try {
-              uuid = uuidv5(safeName, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+              uuid = uuidv5(safeName, "6ba7b810-9dad-11d1-80b4-00c04fd430c8");
             } catch (error) {
               // Ultimate fallback: generate a simple namespace-based UUID
-              uuid = uuidv5(`batch-${i}`, '6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+              uuid = uuidv5(
+                `batch-${i}`,
+                "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+              );
             }
           }
           break;
-        case 'v6':
+        case "v6":
           uuid = uuidv6();
           break;
-        case 'v7':
+        case "v7":
           uuid = uuidv7();
           break;
         default:
@@ -300,10 +318,9 @@ function generateBatchUUIDs() {
     }
 
     displayBatchResults(uuids);
-
   } catch (error) {
-    console.error('Batch UUID generation error:', error);
-    showError('批量生成UUID时出错: ' + error.message);
+    console.error("Batch UUID generation error:", error);
+    showError("批量生成UUID时出错: " + error.message);
   }
 }
 
@@ -332,29 +349,29 @@ function formatUUID(uuid) {
   const lineRadio = document.querySelector('input[name="line"]:checked');
 
   // Fallback to default values if radio buttons are not found
-  const caseOption = caseRadio ? caseRadio.value : 'lower';
-  const lineOption = lineRadio ? lineRadio.value : 'keep';
+  const caseOption = caseRadio ? caseRadio.value : "lower";
+  const lineOption = lineRadio ? lineRadio.value : "keep";
 
   let formatted = uuid;
 
   // Apply format conversion
   switch (format) {
-    case 'string':
+    case "string":
       // Keep as string
       break;
-    case 'hex':
-      formatted = uuid.replace(/-/g, '');
+    case "hex":
+      formatted = uuid.replace(/-/g, "");
       break;
-    case 'binary':
+    case "binary":
       // Convert to binary string representation
-      const hexString = uuid.replace(/-/g, '');
+      const hexString = uuid.replace(/-/g, "");
       formatted = parseInt(hexString, 16).toString(2);
       break;
-    case 'base64':
+    case "base64":
       // Convert to base64
       const uuidBytes = [];
       for (let i = 0; i < uuid.length; i += 2) {
-        if (uuid[i] !== '-') {
+        if (uuid[i] !== "-") {
           uuidBytes.push(parseInt(uuid.substring(i, i + 2), 16));
         }
       }
@@ -363,8 +380,8 @@ function formatUUID(uuid) {
   }
 
   // Apply case conversion (for string format only)
-  if (format === 'string') {
-    if (caseOption === 'upper') {
+  if (format === "string") {
+    if (caseOption === "upper") {
       formatted = formatted.toUpperCase();
     } else {
       formatted = formatted.toLowerCase();
@@ -372,8 +389,8 @@ function formatUUID(uuid) {
   }
 
   // Apply line handling
-  if (lineOption === 'remove' && format === 'string') {
-    formatted = formatted.replace(/-/g, '');
+  if (lineOption === "remove" && format === "string") {
+    formatted = formatted.replace(/-/g, "");
   }
 
   return formatted;
@@ -384,8 +401,8 @@ function formatUUID(uuid) {
  * @param {string[]} uuids - Array of generated UUIDs
  */
 function displayBatchResults(uuids) {
-  const formattedUUIDs = uuids.map(uuid => formatUUID(uuid));
-  const content = formattedUUIDs.join('\n');
+  const formattedUUIDs = uuids.map((uuid) => formatUUID(uuid));
+  const content = formattedUUIDs.join("\n");
 
   generateContentArea.textContent = content;
   generateContentArea.scrollTop = generateContentArea.scrollHeight; // Auto-scroll to bottom
@@ -402,11 +419,11 @@ function handleVersionChange() {
   const version = uuidVersionSelect.value;
 
   // Show/hide namespace and name fields for versions that need them
-  const namespaceArea = document.getElementById('namespaceFields');
-  if (version === 'v3' || version === 'v5') {
-    namespaceArea.classList.remove('hidden');
+  const namespaceArea = document.getElementById("namespaceFields");
+  if (version === "v3" || version === "v5") {
+    namespaceArea.classList.remove("hidden");
   } else {
-    namespaceArea.classList.add('hidden');
+    namespaceArea.classList.add("hidden");
   }
 
   // Regenerate single UUID with new version
@@ -440,10 +457,10 @@ async function copySingleUUID() {
     try {
       singleUuidInput.select();
       // Note: execCommand is deprecated but kept for older browser compatibility
-      document.execCommand('copy');
+      document.execCommand("copy");
       showCopySuccess(singleUuidCopyBtn);
     } catch (fallbackError) {
-      showError('复制到剪贴板失败，请手动复制');
+      showError("复制到剪贴板失败，请手动复制");
     }
   }
 }
@@ -455,7 +472,7 @@ async function copyBatchUUIDs() {
   const textToCopy = generateContentArea.textContent;
 
   if (!textToCopy) {
-    showError('没有可复制的内容');
+    showError("没有可复制的内容");
     return;
   }
 
@@ -467,10 +484,10 @@ async function copyBatchUUIDs() {
     try {
       generateContentArea.select();
       // Note: execCommand is deprecated but kept for older browser compatibility
-      document.execCommand('copy');
+      document.execCommand("copy");
       showCopySuccess(startCopyBtn);
     } catch (fallbackError) {
-      showError('复制到剪贴板失败，请手动复制');
+      showError("复制到剪贴板失败，请手动复制");
     }
   }
 }
@@ -482,25 +499,26 @@ function downloadUUIDs() {
   const content = generateContentArea.textContent;
 
   if (!content) {
-    showError('没有可下载的内容');
+    showError("没有可下载的内容");
     return;
   }
 
   try {
-    const blob = new Blob([content], { type: 'text/plain' });
+    const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
 
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = `uuids_${new Date().toISOString().slice(0, 19).replace(/:/g, '-')}.txt`;
+    a.download = `uuids_${
+      new Date().toISOString().slice(0, 19).replace(/:/g, "-")
+    }.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
 
     URL.revokeObjectURL(url);
-
   } catch (error) {
-    showError('下载失败: ' + error.message);
+    showError("下载失败: " + error.message);
   }
 }
 
@@ -508,7 +526,7 @@ function downloadUUIDs() {
  * Clear the results area
  */
 function clearResults() {
-  generateContentArea.textContent = '';
+  generateContentArea.textContent = "";
 }
 
 /**
@@ -517,16 +535,16 @@ function clearResults() {
  */
 function showCopySuccess(button) {
   const originalText = button.textContent;
-  button.textContent = '已复制!';
-  button.style.backgroundColor = '#52c41a';
-  button.style.color = '#ffffff';
-  button.style.borderColor = '#52c41a';
+  button.textContent = "已复制!";
+  button.style.backgroundColor = "#52c41a";
+  button.style.color = "#ffffff";
+  button.style.borderColor = "#52c41a";
 
   setTimeout(() => {
     button.textContent = originalText;
-    button.style.backgroundColor = '';
-    button.style.color = '';
-    button.style.borderColor = '';
+    button.style.backgroundColor = "";
+    button.style.color = "";
+    button.style.borderColor = "";
   }, 2000);
 }
 
@@ -545,15 +563,15 @@ function showError(message) {
 /**
  * Handle unhandled promise rejections globally
  */
-window.addEventListener('unhandledrejection', (event) => {
-  console.error('未处理的 promise 拒绝:', event.reason);
-  showError('发生意外错误，请重试');
+window.addEventListener("unhandledrejection", (event) => {
+  console.error("未处理的 promise 拒绝:", event.reason);
+  showError("发生意外错误，请重试");
 });
 
 /**
  * Handle global errors
  */
-window.addEventListener('error', (event) => {
-  console.error('全局错误:', event.error);
-  showError('发生意外错误，请重试');
+window.addEventListener("error", (event) => {
+  console.error("全局错误:", event.error);
+  showError("发生意外错误，请重试");
 });

@@ -1,640 +1,767 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>  <link rel="icon" type="image/x-icon" href="Xget.ico" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="Xget.ico" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全闪NAS巅峰对决 - 2025年全闪NAS选购指南</title>
-    <meta name="description" content="2025年全闪NAS巅峰对决，提供全面的全闪NAS选购指南和产品对比，包含性能测试、配置分析、价格对比，帮助用户选择最适合的全闪存储解决方案，涵盖主流品牌和最新技术趋势。">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta
+      name="description"
+      content="2025年全闪NAS巅峰对决，提供全面的全闪NAS选购指南和产品对比，包含性能测试、配置分析、价格对比，帮助用户选择最适合的全闪存储解决方案，涵盖主流品牌和最新技术趋势。"
+    >
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    >
     <link href="styles/enhanced.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #1E46EB 0%, #1CA97E 100%);
-            min-height: 100vh;
-        }
+      body {
+        font-family:
+          "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial,
+          sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #1e46eb 0%, #1ca97e 100%);
+        min-height: 100vh;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+      /* Header */
+      header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            background: linear-gradient(135deg, #1E46EB, #1CA97E);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #1e46eb, #1ca97e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav a:hover {
+        color: #1e46eb;
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 80px 0;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 1s ease-out;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 40px;
+        opacity: 0.9;
+        animation: fadeInUp 1s ease-out 0.2s both;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #1ca97e, #1e46eb);
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: fadeInUp 1s ease-out 0.4s both;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Main Content */
+      .main-content {
+        background: white;
+        margin-top: -50px;
+        border-radius: 30px 30px 0 0;
+        box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .content {
+        padding: 60px 0;
+      }
+
+      /* Section */
+      .section {
+        margin-bottom: 60px;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      .section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, #1e46eb, #1ca97e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, #1e46eb, #1ca97e);
+        border-radius: 2px;
+      }
+
+      .section h3 {
+        font-size: 1.8rem;
+        margin: 30px 0 20px 0;
+        color: #1e46eb;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .section h3 i {
+        color: #1ca97e;
+      }
+
+      .section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .section ul {
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+
+      .section li {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+      }
+
+      /* Cards */
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 40px 0;
+      }
+
+      .card {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #f0f0f0;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .card h4 {
+        font-size: 1.4rem;
+        color: #1e46eb;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .card h4 i {
+        color: #1ca97e;
+      }
+
+      .card p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Stats */
+      .stats {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 60px 0;
+        margin: 60px 0;
+        border-radius: 20px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        text-align: center;
+      }
+
+      .stat-item h3 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #ffd700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .stat-item p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      /* Comparison Table */
+      .comparison-table {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 40px 0;
+      }
+
+      .comparison-table table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: 20px;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .comparison-table th {
+        background: linear-gradient(135deg, #1e46eb, #1ca97e);
+        color: white;
+        font-weight: 600;
+      }
+
+      .comparison-table tr:hover {
+        background: #f8f9fa;
+      }
+
+      /* Tips */
+      .tips {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 70, 235, 0.1),
+          rgba(28, 169, 126, 0.1)
+        );
+        border-radius: 20px;
+        padding: 30px;
+        margin: 40px 0;
+        border-left: 5px solid #1e46eb;
+      }
+
+      .tips h4 {
+        color: #1e46eb;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .tips h4 i {
+        color: #1ca97e;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
         }
 
         .nav {
-            display: flex;
-            gap: 30px;
+          display: none;
         }
 
-        .nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav a:hover {
-            color: #1E46EB;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 80px 0;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #1CA97E, #1E46EB);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Main Content */
-        .main-content {
-            background: white;
-            margin-top: -50px;
-            border-radius: 30px 30px 0 0;
-            box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .content {
-            padding: 60px 0;
-        }
-
-        /* Section */
-        .section {
-            margin-bottom: 60px;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #1E46EB, #1CA97E);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(135deg, #1E46EB, #1CA97E);
-            border-radius: 2px;
-        }
-
-        .section h3 {
-            font-size: 1.8rem;
-            margin: 30px 0 20px 0;
-            color: #1E46EB;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section h3 i {
-            color: #1CA97E;
-        }
-
-        .section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .section ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        .section li {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #555;
-        }
-
-        /* Cards */
         .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #f0f0f0;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .card h4 {
-            font-size: 1.4rem;
-            color: #1E46EB;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card h4 i {
-            color: #1CA97E;
-        }
-
-        .card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Stats */
-        .stats {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 60px 0;
-            margin: 60px 0;
-            border-radius: 20px;
+          grid-template-columns: 1fr;
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
+          grid-template-columns: repeat(2, 1fr);
         }
+      }
 
-        .stat-item h3 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #ffd700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
 
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Comparison Table */
-        .comparison-table {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin: 40px 0;
-        }
-
-        .comparison-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 20px;
-            text-align: left;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .comparison-table th {
-            background: linear-gradient(135deg, #1E46EB, #1CA97E);
-            color: white;
-            font-weight: 600;
-        }
-
-        .comparison-table tr:hover {
-            background: #f8f9fa;
-        }
-
-        /* Tips */
-        .tips {
-            background: linear-gradient(135deg, rgba(30, 70, 235, 0.1), rgba(28, 169, 126, 0.1));
-            border-radius: 20px;
-            padding: 30px;
-            margin: 40px 0;
-            border-left: 5px solid #1E46EB;
-        }
-
-        .tips h4 {
-            color: #1E46EB;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .tips h4 i {
-            color: #1CA97E;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav {
-                display: none;
-            }
-            
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #1E46EB, #1CA97E);
-            z-index: 9999;
-            transition: width 0.1s;
-        }
+      /* Scroll Indicator */
+      .scroll-indicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: linear-gradient(135deg, #1e46eb, #1ca97e);
+        z-index: 9999;
+        transition: width 0.1s;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="scroll-indicator" id="scrollIndicator"></div>
-    
+
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-server"></i> 全闪NAS对决
-                </div>
-                <nav class="nav">
-                    <a href="#overview">概述</a>
-                    <a href="#comparison">对比</a>
-                    <a href="#performance">性能</a>
-                    <a href="#strategy">策略</a>
-                </nav>
-            </div>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-server"></i> 全闪NAS对决
+          </div>
+          <nav class="nav">
+            <a href="#overview">概述</a>
+            <a href="#comparison">对比</a>
+            <a href="#performance">性能</a>
+            <a href="#strategy">策略</a>
+          </nav>
         </div>
+      </div>
     </header>
 
     <section class="hero">
-        <div class="container">
-            <h1>全闪NAS巅峰对决</h1>
-            <p>2025年全闪NAS选购指南 · 极致性能与智能存储的完美融合</p>
-            <a href="#overview" class="cta-button">
-                <i class="fas fa-rocket"></i> 开始探索
-            </a>
-        </div>
+      <div class="container">
+        <h1>全闪NAS巅峰对决</h1>
+        <p>2025年全闪NAS选购指南 · 极致性能与智能存储的完美融合</p>
+        <a href="#overview" class="cta-button">
+          <i class="fas fa-rocket"></i> 开始探索
+        </a>
+      </div>
     </section>
 
     <div class="main-content">
-        <div class="content container">
-            <section id="overview" class="section">
-                <h2><i class="fas fa-microchip"></i> 全闪NAS时代来临</h2>
-                
-                <div style="text-align: center; margin: 30px 0;">
-                    <img src="images/image-11-1.png" alt="全闪NAS总览" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+      <div class="content container">
+        <section id="overview" class="section">
+          <h2><i class="fas fa-microchip"></i> 全闪NAS时代来临</h2>
+
+          <div style="text-align: center; margin: 30px 0">
+            <img
+              src="images/image-11-1.png"
+              alt="全闪NAS总览"
+              style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)"
+            >
+          </div>
+
+          <h3><i class="fas fa-star"></i> 全闪NAS定义与核心优势</h3>
+          <p>
+            全闪NAS以100%固态硬盘为存储介质，读写延迟低于0.1ms，顺序带宽轻松跑满万兆；无盘片共振，噪音&lt;20dB，体积较传统4盘位缩小40%；支持PCIe
+            4.0通道与NVMe协议，单盘理论峰值7GB/s，为虚拟化、高清剪辑、AI训练提供极致性能。
+          </p>
+
+          <h3><i class="fas fa-chart-line"></i> 市场格局与选购五维模型</h3>
+
+          <div style="text-align: center; margin: 30px 0">
+            <img
+              src="images/image-13-1.png"
+              alt="市场格局分析"
+              style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)"
+            >
+          </div>
+
+          <p>
+            2025年全闪NAS呈两极分化：消费级4盘位价格3000-4500元，企业级8盘位突破万元。选购需同时评估盘位上限、Raid生态、网络接口、处理器代际与系统开放性；本报告以价格、盘位、Raid、性能、生态五维展开横向对比，帮助用户在绿联、极空间、铁威马、飞牛零刻等品牌中快速锁定最优解。
+          </p>
+
+          <div class="stats">
+            <div class="container">
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <h3>&lt;0.1ms</h3>
+                  <p>读写延迟</p>
                 </div>
-                
-                <h3><i class="fas fa-star"></i> 全闪NAS定义与核心优势</h3>
-                <p>全闪NAS以100%固态硬盘为存储介质，读写延迟低于0.1ms，顺序带宽轻松跑满万兆；无盘片共振，噪音&lt;20dB，体积较传统4盘位缩小40%；支持PCIe 4.0通道与NVMe协议，单盘理论峰值7GB/s，为虚拟化、高清剪辑、AI训练提供极致性能。</p>
-
-                <h3><i class="fas fa-chart-line"></i> 市场格局与选购五维模型</h3>
-                
-                <div style="text-align: center; margin: 30px 0;">
-                    <img src="images/image-13-1.png" alt="市场格局分析" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div class="stat-item">
+                  <h3>40%</h3>
+                  <p>体积缩减</p>
                 </div>
-                
-                <p>2025年全闪NAS呈两极分化：消费级4盘位价格3000-4500元，企业级8盘位突破万元。选购需同时评估盘位上限、Raid生态、网络接口、处理器代际与系统开放性；本报告以价格、盘位、Raid、性能、生态五维展开横向对比，帮助用户在绿联、极空间、铁威马、飞牛零刻等品牌中快速锁定最优解。</p>
-
-                <div class="stats">
-                    <div class="container">
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <h3>&lt;0.1ms</h3>
-                                <p>读写延迟</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3>40%</h3>
-                                <p>体积缩减</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3>&lt;20dB</h3>
-                                <p>噪音水平</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3>7GB/s</h3>
-                                <p>理论峰值</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="stat-item">
+                  <h3>&lt;20dB</h3>
+                  <p>噪音水平</p>
                 </div>
-            </section>
-
-            <section id="brands" class="section">
-                <h2><i class="fas fa-cogs"></i> 四大品牌主力机型速览</h2>
-                
-                <div class="card-grid">
-                    <div class="card">
-                        <img src="images/image-1-1.png" alt="绿联DXP480T Plus" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
-                        <h4><i class="fas fa-gem"></i> 绿联DXP480T Plus</h4>
-                        <p><strong>配置：</strong>4×M.2 NVMe，i5-1235U十核，万兆电口+双雷电4，国补价3229元</p>
-                        <p><strong>特性：</strong>支持Raid0/1/5/10与全局热备，UGOS Pro内置虚拟机</p>
-                    </div>
-                    
-                    <div class="card">
-                        <img src="images/image-2-1.png" alt="极空间T2S" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
-                        <h4><i class="fas fa-mobile-alt"></i> 极空间T2S</h4>
-                        <p><strong>配置：</strong>2×M.2 NVMe，RK3588C八核，2.5G网口，国补2209元</p>
-                        <p><strong>特性：</strong>支持Raid1/ZDR，极影视AI识图一键备份，定位便携全闪</p>
-                    </div>
-                    
-                    <div class="card">
-                        <img src="images/image-3-1.png" alt="铁威马F8 SSD Plus" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
-                        <h4><i class="fas fa-shield-alt"></i> 铁威马F8 SSD Plus</h4>
-                        <p><strong>配置：</strong>8×M.2 NVMe，N305八核，万兆电口，国补4500元</p>
-                        <p><strong>特性：</strong>PCIe 3.0×1单盘通道，支持Raid0/1/5/6/10/TNAS，QuTS Hero ZFS快照</p>
-                    </div>
-                    
-                    <div class="card">
-                        <img src="images/image-4-1.png" alt="飞牛零刻SF8" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
-                        <h4><i class="fas fa-code"></i> 飞牛零刻SF8</h4>
-                        <p><strong>配置：</strong>8×M.2 NVMe，i3-N305，万兆电口，准系统3299元</p>
-                        <p><strong>特性：</strong>开放OpenNAS系统，Raid模式自由切换，主打低功耗全闪堆盘位</p>
-                    </div>
+                <div class="stat-item">
+                  <h3>7GB/s</h3>
+                  <p>理论峰值</p>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <section id="comparison" class="section">
-                <h2><i class="fas fa-balance-scale"></i> 价格与盘位对比</h2>
-                
-                <h3><i class="fas fa-calculator"></i> 每盘位成本谁最香</h3>
-                <p>以空机国补价为基准，绿联DXP480T Plus每盘位807元；极空间T2S每盘位1104元；铁威马F8 SSD Plus每盘位562元；飞牛零刻SF8每盘位412元。若追求极致容量密度，8盘位机型单位成本最低；若兼顾雷电与万兆，绿联4盘位仍具性价比。</p>
-                
-                <div style="text-align: center; margin: 30px 0;">
-                    <img src="images/image-4-2.png" alt="价格对比图表" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                </div>
+        <section id="brands" class="section">
+          <h2><i class="fas fa-cogs"></i> 四大品牌主力机型速览</h2>
 
-                <div class="comparison-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>品牌型号</th>
-                                <th>盘位</th>
-                                <th>国补价格</th>
-                                <th>每盘位成本</th>
-                                <th>主要特色</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>飞牛零刻SF8</strong></td>
-                                <td>8盘位</td>
-                                <td>¥3299</td>
-                                <td>¥412/盘位</td>
-                                <td>开放系统、低功耗</td>
-                            </tr>
-                            <tr>
-                                <td><strong>铁威马F8 SSD Plus</strong></td>
-                                <td>8盘位</td>
-                                <td>¥4500</td>
-                                <td>¥562/盘位</td>
-                                <td>ZFS快照、企业级</td>
-                            </tr>
-                            <tr>
-                                <td><strong>绿联DXP480T Plus</strong></td>
-                                <td>4盘位</td>
-                                <td>¥3229</td>
-                                <td>¥807/盘位</td>
-                                <td>雷电4、虚拟机</td>
-                            </tr>
-                            <tr>
-                                <td><strong>极空间T2S</strong></td>
-                                <td>2盘位</td>
-                                <td>¥2209</td>
-                                <td>¥1104/盘位</td>
-                                <td>便携、AI功能</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+          <div class="card-grid">
+            <div class="card">
+              <img
+                src="images/image-1-1.png"
+                alt="绿联DXP480T Plus"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px"
+              >
+              <h4><i class="fas fa-gem"></i> 绿联DXP480T Plus</h4>
+              <p>
+                <strong>配置：</strong>4×M.2
+                NVMe，i5-1235U十核，万兆电口+双雷电4，国补价3229元
+              </p>
+              <p>
+                <strong>特性：</strong>支持Raid0/1/5/10与全局热备，UGOS
+                Pro内置虚拟机
+              </p>
+            </div>
 
-                <h3><i class="fas fa-expand"></i> 盘位扩展与形态差异</h3>
-                <p>绿联、极空间采用桌面静噪设计，体积&lt;3L；铁威马、飞牛零刻为2U堆叠式，可上机架。盘位形态全系M.2 2280，铁威马后四盘共享2条PCIe，绿联四盘独享4条PCIe4.0，性能一致性更优。</p>
-            </section>
+            <div class="card">
+              <img
+                src="images/image-2-1.png"
+                alt="极空间T2S"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px"
+              >
+              <h4><i class="fas fa-mobile-alt"></i> 极空间T2S</h4>
+              <p>
+                <strong>配置：</strong>2×M.2
+                NVMe，RK3588C八核，2.5G网口，国补2209元
+              </p>
+              <p>
+                <strong
+                >特性：</strong>支持Raid1/ZDR，极影视AI识图一键备份，定位便携全闪
+              </p>
+            </div>
 
-            <section id="raid" class="section">
-                <h2><i class="fas fa-database"></i> Raid与数据安全</h2>
-                
-                <div style="text-align: center; margin: 30px 0;">
-                    <img src="images/image-7-1.jpg" alt="Raid安全对比" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                </div>
-                
-                <h3><i class="fas fa-shield-alt"></i> Raid级别覆盖度排名</h3>
-                <p><strong>铁威马&gt;绿联&gt;飞牛零刻&gt;极空间。</strong>铁威马提供Raid6/10与TNAS双校验；绿联支持Raid5/10与热备；飞牛零刻系统级Raid5/6需手动开启；极空间仅Raid1与自研ZDR，缺少Raid5，重数据安全用户需外挂备份。</p>
+            <div class="card">
+              <img
+                src="images/image-3-1.png"
+                alt="铁威马F8 SSD Plus"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px"
+              >
+              <h4><i class="fas fa-shield-alt"></i> 铁威马F8 SSD Plus</h4>
+              <p>
+                <strong>配置：</strong>8×M.2
+                NVMe，N305八核，万兆电口，国补4500元
+              </p>
+              <p>
+                <strong>特性：</strong>PCIe
+                3.0×1单盘通道，支持Raid0/1/5/6/10/TNAS，QuTS Hero ZFS快照
+              </p>
+            </div>
 
-                <div class="tips">
-                    <h4><i class="fas fa-lightbulb"></i> Raid级别说明</h4>
-                    <ul>
-                        <li><strong>Raid1：</strong>镜像模式，数据安全性最高，但容量利用率50%</li>
-                        <li><strong>Raid5：</strong>分布式奇偶校验，兼顾性能与安全，需要3盘以上</li>
-                        <li><strong>Raid6：</strong>双奇偶校验，可同时坏2块盘，最安全的企业级方案</li>
-                        <li><strong>Raid10：</strong>镜像+条带，性能与安全并重，需要4盘以上</li>
-                    </ul>
-                </div>
+            <div class="card">
+              <img
+                src="images/image-4-1.png"
+                alt="飞牛零刻SF8"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px"
+              >
+              <h4><i class="fas fa-code"></i> 飞牛零刻SF8</h4>
+              <p>
+                <strong>配置：</strong>8×M.2
+                NVMe，i3-N305，万兆电口，准系统3299元
+              </p>
+              <p>
+                <strong
+                >特性：</strong>开放OpenNAS系统，Raid模式自由切换，主打低功耗全闪堆盘位
+              </p>
+            </div>
+          </div>
+        </section>
 
-                <h3><i class="fas fa-camera"></i> 快照与备份生态</h3>
-                <p>铁威马QuTS Hero自带ZFS快照、块级重删；绿联UGOS Pro支持定时快照与多版本备份；飞牛零刻通过OpenNAS插件实现Btrfs快照；极空间以极备份为核心，支持增量与多云同步，但无块级快照。</p>
-            </section>
+        <section id="comparison" class="section">
+          <h2><i class="fas fa-balance-scale"></i> 价格与盘位对比</h2>
 
-            <section id="performance" class="section">
-                <h2><i class="fas fa-tachometer-alt"></i> 性能与接口</h2>
-                
-                <div style="text-align: center; margin: 30px 0;">
-                    <img src="images/image-8-1.png" alt="性能对比图表" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                </div>
-                
-                <h3><i class="fas fa-network-wired"></i> 网络与雷电接口对飙</h3>
-                <p>绿联双雷电4+万兆，实测读写2.8GB/s；铁威马单万兆，Raid0顺序2.3GB/s；飞牛零刻单万兆，性能与铁威马接近；极空间仅2.5G，顺序读写285MB/s，适合轻量办公。雷电接口让绿联在Mac生态独占优势。</p>
+          <h3><i class="fas fa-calculator"></i> 每盘位成本谁最香</h3>
+          <p>
+            以空机国补价为基准，绿联DXP480T
+            Plus每盘位807元；极空间T2S每盘位1104元；铁威马F8 SSD
+            Plus每盘位562元；飞牛零刻SF8每盘位412元。若追求极致容量密度，8盘位机型单位成本最低；若兼顾雷电与万兆，绿联4盘位仍具性价比。
+          </p>
 
-                <div class="card-grid">
-                    <div class="card">
-                        <h4><i class="fas fa-bolt"></i> 雷电4 + 万兆</h4>
-                        <p><strong>绿联DXP480T Plus</strong></p>
-                        <p>实测读写：2.8GB/s</p>
-                        <p>适合：Mac用户、视频编辑</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h4><i class="fas fa-ethernet"></i> 单万兆</h4>
-                        <p><strong>铁威马F8 / 飞牛SF8</strong></p>
-                        <p>实测读写：2.3GB/s</p>
-                        <p>适合：企业级应用</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h4><i class="fas fa-wifi"></i> 2.5G网络</h4>
-                        <p><strong>极空间T2S</strong></p>
-                        <p>实测读写：285MB/s</p>
-                        <p>适合：轻量办公</p>
-                    </div>
-                </div>
+          <div style="text-align: center; margin: 30px 0">
+            <img
+              src="images/image-4-2.png"
+              alt="价格对比图表"
+              style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)"
+            >
+          </div>
 
-                <h3><i class="fas fa-microchip"></i> CPU与解码能力</h3>
-                <p>i5-1235U十核&gt; i3-N305八核&gt; RK3588C八核&gt; N305八核；绿联与飞牛零刻均支持AV1硬编解码，8K输出；极空间RK3588C支持8K但受限于2.5G带宽；铁威马N305仅4K输出，重CPU计算场景稍弱。</p>
-            </section>
+          <div class="comparison-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>品牌型号</th>
+                  <th>盘位</th>
+                  <th>国补价格</th>
+                  <th>每盘位成本</th>
+                  <th>主要特色</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>飞牛零刻SF8</strong></td>
+                  <td>8盘位</td>
+                  <td>¥3299</td>
+                  <td>¥412/盘位</td>
+                  <td>开放系统、低功耗</td>
+                </tr>
+                <tr>
+                  <td><strong>铁威马F8 SSD Plus</strong></td>
+                  <td>8盘位</td>
+                  <td>¥4500</td>
+                  <td>¥562/盘位</td>
+                  <td>ZFS快照、企业级</td>
+                </tr>
+                <tr>
+                  <td><strong>绿联DXP480T Plus</strong></td>
+                  <td>4盘位</td>
+                  <td>¥3229</td>
+                  <td>¥807/盘位</td>
+                  <td>雷电4、虚拟机</td>
+                </tr>
+                <tr>
+                  <td><strong>极空间T2S</strong></td>
+                  <td>2盘位</td>
+                  <td>¥2209</td>
+                  <td>¥1104/盘位</td>
+                  <td>便携、AI功能</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-            <section id="strategy" class="section">
-                <h2><i class="fas fa-chess"></i> 选购策略与总结</h2>
-                
-                <div style="text-align: center; margin: 30px 0;">
-                    <img src="images/image-19-1.png" alt="选购策略总结" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                </div>
-                
-                <h3><i class="fas fa-star"></i> 五维评分与场景匹配</h3>
-                <p>综合价格、盘位、Raid、性能、生态五维，铁威马F8 SSD Plus得分最高，适合中小企业冷数据+热数据分层；绿联DXP480T Plus适合视频创作者与苹果生态；飞牛零刻SF8适合极客多系统；极空间T2S适合移动办公轻备份。</p>
+          <h3><i class="fas fa-expand"></i> 盘位扩展与形态差异</h3>
+          <p>
+            绿联、极空间采用桌面静噪设计，体积&lt;3L；铁威马、飞牛零刻为2U堆叠式，可上机架。盘位形态全系M.2
+            2280，铁威马后四盘共享2条PCIe，绿联四盘独享4条PCIe4.0，性能一致性更优。
+          </p>
+        </section>
 
-                <div class="tips">
-                    <h4><i class="fas fa-users"></i> 场景推荐</h4>
-                    <ul>
-                        <li><strong>视频创作者：</strong>绿联DXP480T Plus（雷电4 + 万兆）</li>
-                        <li><strong>中小企业：</strong>铁威马F8 SSD Plus（8盘位 + ZFS快照）</li>
-                        <li><strong>技术极客：</strong>飞牛零刻SF8（开放系统 + 低功耗）</li>
-                        <li><strong>移动办公：</strong>极空间T2S（便携 + AI功能）</li>
-                    </ul>
-                </div>
+        <section id="raid" class="section">
+          <h2><i class="fas fa-database"></i> Raid与数据安全</h2>
 
-                <h3><i class="fas fa-route"></i> 2025全闪NAS选购三步法</h3>
-                <div class="card-grid">
-                    <div class="card">
-                        <h4><i class="fas fa-1"></i> 第一步：明确盘位需求</h4>
-                        <p>4盘位选绿联，8盘位选铁威马或飞牛</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h4><i class="fas fa-2"></i> 第二步：看网络环境</h4>
-                        <p>万兆以上优先绿联雷电，2.5G内网极空间足够</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h4><i class="fas fa-3"></i> 第三步：评估数据安全</h4>
-                        <p>Raid6+快照选铁威马，轻量Raid1选极空间，折中Raid5选绿联</p>
-                    </div>
-                </div>
+          <div style="text-align: center; margin: 30px 0">
+            <img
+              src="images/image-7-1.jpg"
+              alt="Raid安全对比"
+              style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)"
+            >
+          </div>
 
-                <div class="tips">
-                    <h4><i class="fas fa-check-circle"></i> 选购建议总结</h4>
-                    <p>按此三步即可锁定最具性价比的全闪NAS。记住：数据安全永远是第一位的，不要为了性能而牺牲数据的可靠性。合理的Raid配置加上定期备份，才能确保您的珍贵数据万无一失。</p>
-                </div>
+          <h3><i class="fas fa-shield-alt"></i> Raid级别覆盖度排名</h3>
+          <p>
+            <strong
+            >铁威马&gt;绿联&gt;飞牛零刻&gt;极空间。</strong>铁威马提供Raid6/10与TNAS双校验；绿联支持Raid5/10与热备；飞牛零刻系统级Raid5/6需手动开启；极空间仅Raid1与自研ZDR，缺少Raid5，重数据安全用户需外挂备份。
+          </p>
 
-                <div style="text-align: center; margin: 30px 0;">
-                    <img src="images/image-20-1.png" alt="最终推荐" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                </div>
-            </section>
-        </div>
+          <div class="tips">
+            <h4><i class="fas fa-lightbulb"></i> Raid级别说明</h4>
+            <ul>
+              <li>
+                <strong
+                >Raid1：</strong>镜像模式，数据安全性最高，但容量利用率50%
+              </li>
+              <li>
+                <strong
+                >Raid5：</strong>分布式奇偶校验，兼顾性能与安全，需要3盘以上
+              </li>
+              <li>
+                <strong
+                >Raid6：</strong>双奇偶校验，可同时坏2块盘，最安全的企业级方案
+              </li>
+              <li>
+                <strong>Raid10：</strong>镜像+条带，性能与安全并重，需要4盘以上
+              </li>
+            </ul>
+          </div>
+
+          <h3><i class="fas fa-camera"></i> 快照与备份生态</h3>
+          <p>
+            铁威马QuTS Hero自带ZFS快照、块级重删；绿联UGOS
+            Pro支持定时快照与多版本备份；飞牛零刻通过OpenNAS插件实现Btrfs快照；极空间以极备份为核心，支持增量与多云同步，但无块级快照。
+          </p>
+        </section>
+
+        <section id="performance" class="section">
+          <h2><i class="fas fa-tachometer-alt"></i> 性能与接口</h2>
+
+          <div style="text-align: center; margin: 30px 0">
+            <img
+              src="images/image-8-1.png"
+              alt="性能对比图表"
+              style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)"
+            >
+          </div>
+
+          <h3><i class="fas fa-network-wired"></i> 网络与雷电接口对飙</h3>
+          <p>
+            绿联双雷电4+万兆，实测读写2.8GB/s；铁威马单万兆，Raid0顺序2.3GB/s；飞牛零刻单万兆，性能与铁威马接近；极空间仅2.5G，顺序读写285MB/s，适合轻量办公。雷电接口让绿联在Mac生态独占优势。
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <h4><i class="fas fa-bolt"></i> 雷电4 + 万兆</h4>
+              <p><strong>绿联DXP480T Plus</strong></p>
+              <p>实测读写：2.8GB/s</p>
+              <p>适合：Mac用户、视频编辑</p>
+            </div>
+
+            <div class="card">
+              <h4><i class="fas fa-ethernet"></i> 单万兆</h4>
+              <p><strong>铁威马F8 / 飞牛SF8</strong></p>
+              <p>实测读写：2.3GB/s</p>
+              <p>适合：企业级应用</p>
+            </div>
+
+            <div class="card">
+              <h4><i class="fas fa-wifi"></i> 2.5G网络</h4>
+              <p><strong>极空间T2S</strong></p>
+              <p>实测读写：285MB/s</p>
+              <p>适合：轻量办公</p>
+            </div>
+          </div>
+
+          <h3><i class="fas fa-microchip"></i> CPU与解码能力</h3>
+          <p>
+            i5-1235U十核&gt; i3-N305八核&gt; RK3588C八核&gt;
+            N305八核；绿联与飞牛零刻均支持AV1硬编解码，8K输出；极空间RK3588C支持8K但受限于2.5G带宽；铁威马N305仅4K输出，重CPU计算场景稍弱。
+          </p>
+        </section>
+
+        <section id="strategy" class="section">
+          <h2><i class="fas fa-chess"></i> 选购策略与总结</h2>
+
+          <div style="text-align: center; margin: 30px 0">
+            <img
+              src="images/image-19-1.png"
+              alt="选购策略总结"
+              style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)"
+            >
+          </div>
+
+          <h3><i class="fas fa-star"></i> 五维评分与场景匹配</h3>
+          <p>
+            综合价格、盘位、Raid、性能、生态五维，铁威马F8 SSD
+            Plus得分最高，适合中小企业冷数据+热数据分层；绿联DXP480T
+            Plus适合视频创作者与苹果生态；飞牛零刻SF8适合极客多系统；极空间T2S适合移动办公轻备份。
+          </p>
+
+          <div class="tips">
+            <h4><i class="fas fa-users"></i> 场景推荐</h4>
+            <ul>
+              <li>
+                <strong>视频创作者：</strong>绿联DXP480T Plus（雷电4 + 万兆）
+              </li>
+              <li>
+                <strong>中小企业：</strong>铁威马F8 SSD Plus（8盘位 + ZFS快照）
+              </li>
+              <li>
+                <strong>技术极客：</strong>飞牛零刻SF8（开放系统 + 低功耗）
+              </li>
+              <li><strong>移动办公：</strong>极空间T2S（便携 + AI功能）</li>
+            </ul>
+          </div>
+
+          <h3><i class="fas fa-route"></i> 2025全闪NAS选购三步法</h3>
+          <div class="card-grid">
+            <div class="card">
+              <h4><i class="fas fa-1"></i> 第一步：明确盘位需求</h4>
+              <p>4盘位选绿联，8盘位选铁威马或飞牛</p>
+            </div>
+
+            <div class="card">
+              <h4><i class="fas fa-2"></i> 第二步：看网络环境</h4>
+              <p>万兆以上优先绿联雷电，2.5G内网极空间足够</p>
+            </div>
+
+            <div class="card">
+              <h4><i class="fas fa-3"></i> 第三步：评估数据安全</h4>
+              <p>Raid6+快照选铁威马，轻量Raid1选极空间，折中Raid5选绿联</p>
+            </div>
+          </div>
+
+          <div class="tips">
+            <h4><i class="fas fa-check-circle"></i> 选购建议总结</h4>
+            <p>
+              按此三步即可锁定最具性价比的全闪NAS。记住：数据安全永远是第一位的，不要为了性能而牺牲数据的可靠性。合理的Raid配置加上定期备份，才能确保您的珍贵数据万无一失。
+            </p>
+          </div>
+
+          <div style="text-align: center; margin: 30px 0">
+            <img
+              src="images/image-20-1.png"
+              alt="最终推荐"
+              style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1)"
+            >
+          </div>
+        </section>
+      </div>
     </div>
 
     <script type="module" src="scripts/enhanced.js"></script>
-</body>
+  </body>
 </html>

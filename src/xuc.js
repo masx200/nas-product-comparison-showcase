@@ -205,7 +205,9 @@ async function loadPlatforms() {
     // const fileContent = await response.text();
 
     // Parse the platform data from the JavaScript file
-    const module=await import('https://cdn.jsdelivr.net/gh/masx200/Xget@main/src/config/platforms.js')
+    const module = await import(
+      "https://cdn.jsdelivr.net/gh/masx200/Xget@main/src/config/platforms.js"
+    );
     platformsData = parsePlatformsData(module);
 
     if (Object.keys(platformsData).length === 0) {
@@ -230,7 +232,7 @@ function parsePlatformsData(module) {
   if (!module || !module.PLATFORMS) {
     throw new Error("无法在模块中找到 PLATFORMS 对象");
   }
-  return JSON.parse(JSON.stringify( module.PLATFORMS));
+  return JSON.parse(JSON.stringify(module.PLATFORMS));
   // try {
   //   // First, try to find the PLATFORMS export
   //   const platformsMatch = fileContent.match(
