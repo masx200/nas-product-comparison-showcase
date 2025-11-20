@@ -1,10 +1,12 @@
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import react from "@vitejs/plugin-react";
+import path from "path";
 import { defineConfig } from "vite";
 import { prismjsPlugin } from "vite-plugin-prismjs";
 import { VitePWA } from "vite-plugin-pwa";
 //@ts-ignore
-import remoteToLocal, { FileCache } from "@masx200/vite-plugin-virtual-http-resolve";
+import remoteToLocal, {
+  FileCache,
+} from "@masx200/vite-plugin-virtual-http-resolve";
 import tailwindcss from "@tailwindcss/vite"; // 引入 Vite 插件
 import { readdirSync, statSync } from "fs";
 import { resolve } from "path";
@@ -32,7 +34,8 @@ function getHtmlFiles() {
 }
 
 export default defineConfig({
-  plugins: [react(),
+  plugins: [
+    react(),
     VitePWA({
       registerType: "autoUpdate", // 可选 prompt / autoUpdate
       injectRegister: "auto", // 自动注入注册脚本
@@ -100,10 +103,16 @@ export default defineConfig({
     }),
   ],
 
+  esbuild: {
+    drop: ["console", "debugger"],
+  },
+
   // 多入口页面配置
   build: {
     outDir: "dist",
     assetsDir: "assets",
+    target: "esnext",
+    minify: "esbuild",
     rollupOptions: {
       plugins: [
         htmlMinifier({
