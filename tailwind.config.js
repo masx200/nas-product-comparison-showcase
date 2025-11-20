@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["*.html", "./**/*.html",
-    
+
     "./src/**/*.{js,ts,jsx,tsx}",
     "./全闪NAS巅峰对决网站功能演示/**/*.{js,ts,jsx,tsx}",
     "./nas-product-comparison-showcase/**/*.{js,ts,jsx,tsx}",
     "./UUID在线生成器/**/*.{js,ts,jsx,tsx}",
-  
-  
+
+
   ],
   theme: {
     extend: {
@@ -36,10 +36,16 @@ export default {
         "notion-gray": "#f7f6f3",
         "notion-text": "#37352f",
         "notion-light-gray": "#ebeced",
+        brand: {
+          dark: '#1a237e',
+          primary: '#3949ab',
+          light: '#e8eefb',
+          accent: '#f44336'
+        }
       },
       fontFamily: {
         inter: ["Inter", "system-ui", "sans-serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ['"Noto Sans SC"', "Inter", "system-ui", "sans-serif"],
         mono: ["Fira Code", "Menlo", "monospace"],
       },
     },
