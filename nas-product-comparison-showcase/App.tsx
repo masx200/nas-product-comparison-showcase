@@ -36,8 +36,8 @@ const App: React.FC = () => {
 
       <footer className="bg-brand-dark text-white py-12 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
-            <div className="flex justify-center items-center gap-2 mb-4 opacity-50">
-                 <span className="font-semibold">NAS Review 2025</span>
+            <div className="flex justify-center items-center gap-2 mb-4">
+                 <span className="font-semibold text-yellow-400">NAS Review 2025</span>
             </div>
             <p className="text-slate-400 text-sm">
                 © 2025 Tech Review. All rights reserved. <br/>
