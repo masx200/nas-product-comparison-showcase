@@ -19,7 +19,7 @@
     "@vitejs/plugin-react": "^5.0.0",
     "rollup-plugin-html-minifier": "^2.0.0",
     "typescript": "~5.8.2",
-    "vite": "^7.1.7",
+    "vite": "^7.3.2",
     "vite-plugin-prismjs": "^0.0.11",
     "vite-plugin-pwa": "^1.1.0"
   },
